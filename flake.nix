@@ -13,17 +13,13 @@
     # We intentionally import nixpkgs and haskell.nix as non-flakes, to match the
     # flake-free normal build workflow exactly.
     nixpkgs = {
-      type = "github";
-      owner = "NixOS";
-      repo = "nixpkgs";
-      ref = "nixpkgs-unstable";
+      url = "github:NixOS/nixpkgs/e14f9fb57315f0d4abde222364f19f88c77d2b79";
       flake = false;
     };
     haskell-nix = {
-      url = "github:input-output-hk/haskell.nix";
+      url = "github:input-output-hk/haskell.nix/11f6d7ae562f4f13e5965a1684fce714a498ede8";
       flake = false;
     };
-
     cardano-repo-tool = {
       url = "github:input-output-hk/cardano-repo-tool";
       flake = false;
@@ -41,7 +37,7 @@
       flake = false;
     };
     hackage-nix = {
-      url = "github:input-output-hk/hackage.nix";
+      url = "github:input-output-hk/hackage.nix/3c491f25bd4fc1138ea4350ede0ec876fc4df7c4";
       flake = false;
     };
     haskell-language-server = {
