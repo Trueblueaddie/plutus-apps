@@ -48,7 +48,6 @@ constraints:
   , cardano-crypto-praos == 2.0.0
   , cardano-crypto-tests == 2.0.0
   , cardano-slotting     == 0.1.0.0
-  , measures             == 0.1.0.0
   , orphans-deriving-via == 0.1.0.0
   , strict-containers    == 0.1.0.0
 
