@@ -10,12 +10,13 @@ repository cardano-haskell-packages
     c00aae8461a256275598500ea0e187588c35a5d5d7454fb57eac18d9edb86a56
     d4a35cd3121aa00d18544bb0ac01c3e1691d618f462c46129271bccf39f7e8ee
 
--- See CONTRIBUTING for some Nix commands you will need to run if you
--- update either of these.
--- Bump this if you need newer packages from Hackage
+-- this gets ignored by cabal :(
 index-state: 2022-05-18T00:00:00Z
--- Bump this if you need newer packages from CHaP
-index-state: cardano-haskell-packages 2022-10-25T00:00:00Z
+
+-- this gets ignored by haskell.nix :(
+index-state:
+  , hackage.haskell.org 2022-05-18T00:00:00Z
+  , cardano-haskell-packages 2022-10-25T00:00:00Z
 
 packages: cardano-streaming
           doc
