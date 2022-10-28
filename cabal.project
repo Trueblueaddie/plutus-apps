@@ -49,7 +49,6 @@ constraints:
   , cardano-crypto-tests == 2.0.0
   , cardano-slotting     == 0.1.0.0
   , orphans-deriving-via == 0.1.0.0
-  , strict-containers    == 0.1.0.0
 
 -- We never, ever, want this.
 write-ghc-environment-files: never
