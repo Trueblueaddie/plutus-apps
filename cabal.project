@@ -51,9 +51,6 @@ constraints:
   -- needed by cardano-ledger-core-0.1.0.0
   , cardano-crypto-class             == 2.0.0
 
-  -- cardano-crypto
-  , cardano-crypto                   == 1.1.0
-
   -- plutus
   , plutus-core                      == 1.0.0.0
   , plutus-ghc-stub                  == 8.6.5
@@ -61,7 +58,6 @@ constraints:
   , plutus-tx                        == 1.0.0.0
   , plutus-tx-plugin                 == 1.0.0.0
   , prettyprinter-configurable       == 0.1.0.0
-  , word-array                       == 0.1.0.0
 
   -- cardano-ledger
   , byron-spec-chain                 == 0.1.0.0
