@@ -41,6 +41,13 @@ packages: cardano-streaming
           rewindable-index
           web-ghc
 
+--
+-- The following section constrains the build plan to what we currently
+-- know is buildable. Unfortunately, at this moment, the cabal files of our
+-- packages in CHaP do not specify correctly version bounds and, without
+-- further help, cabal alone will come up with a failing build plan.
+--
+
 constraints:
   -- needed by cardano-crypto-class-2.0.0 and cardano-crypto-wrapper-1.3.0
   , cardano-prelude                  == 0.1.0.0
@@ -50,6 +57,10 @@ constraints:
 
   -- needed by cardano-ledger-core-0.1.0.0
   , cardano-crypto-class             == 2.0.0
+
+  --
+  -- the following constraints are speculative and reflect the current build plan
+  --
 
   -- plutus
   , plutus-core                      == 1.0.0.0
