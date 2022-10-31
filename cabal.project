@@ -50,7 +50,6 @@ constraints:
 
   -- needed by cardano-ledger-core-0.1.0.0
   , cardano-crypto-class             == 2.0.0
-  , cardano-crypto-tests             == 2.0.0
 
   -- cardano-crypto
   , cardano-crypto                   == 1.1.0
