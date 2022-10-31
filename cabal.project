@@ -110,7 +110,6 @@ constraints:
   , tracer-transformers              == 0.1.0.1
 
   -- others
-  , ekg-json                         == 0.1.0.7.0.0.0.0.1
   , ekg-forward                      == 0.1.0
 
 -- We never, ever, want this.
