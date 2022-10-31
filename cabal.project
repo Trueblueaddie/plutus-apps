@@ -47,7 +47,6 @@ constraints:
 
   -- cardano-base
   , cardano-binary                   == 1.5.0
-  , cardano-binary-test              == 1.3.0
   , cardano-crypto-class             == 2.0.0
   , cardano-crypto-praos             == 2.0.0
   , cardano-crypto-tests             == 2.0.0
