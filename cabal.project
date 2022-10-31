@@ -1,4 +1,4 @@
--- Custom repository for cardano haskell packages, see CONTRIBUTING for more
+-- Custom repository for cardano haskell packages
 repository cardano-haskell-packages
   url: https://input-output-hk.github.io/cardano-haskell-packages
   secure: True
@@ -13,7 +13,7 @@ repository cardano-haskell-packages
 -- this gets ignored by cabal :(
 index-state: 2022-05-18T00:00:00Z
 
--- this gets ignored by haskell.nix :(
+-- this gets ignored by haskell.nix :((
 index-state:
   , hackage.haskell.org 2022-05-18T00:00:00Z
   , cardano-haskell-packages 2022-10-25T00:00:00Z
