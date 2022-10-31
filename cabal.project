@@ -42,9 +42,8 @@ packages: cardano-streaming
           web-ghc
 
 constraints:
-  -- cardano-prelude
+  -- needed by cardano-crypto-class-2.0.0 and cardano-crypto-wrapper-1.3.0
   , cardano-prelude                  == 0.1.0.0
-  , cardano-prelude-test             == 0.1.0.0
 
   -- cardano-base
   , cardano-binary                   == 1.5.0
