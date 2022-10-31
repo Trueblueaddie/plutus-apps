@@ -109,8 +109,6 @@ constraints:
   , lobemo-scribe-systemd            == 0.1.0.0
   , tracer-transformers              == 0.1.0.1
 
-  -- others
-  , ekg-forward                      == 0.1.0
 
 -- We never, ever, want this.
 write-ghc-environment-files: never
