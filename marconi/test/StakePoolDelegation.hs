@@ -45,7 +45,15 @@ test = H.integration . HE.runFinallies . workspace "chairman" $ \tempAbsBasePath
               & M.toEvents
               & M.sqlite ":memory:"
 
-  -- stake something
+  -- TODO:
+  --  - register a stakepool
+  --  - generate a staking address for a user
+  --  - stake the user's lovelace to that pool, let's call this event "stake1" (referred to below)
+  --  - wait for the turn of epoch
+  --  - stake to another pool (or unstake?), let's call this event "stake2"
+  --  - wait for the turn of next epoch: observe event "stake1" realize: stake appears in indexer
+  --  - wait for the turn of next epoch: observe "stake2" realize: stake appears in another pool (or disappears from pool1 if it was just unstaked)
+
 
   utxoVKeyFile <- HE.note $ tempAbsBasePath' </> "shelley/utxo-keys/utxo1.vkey"
   utxoSKeyFile <- HE.note $ tempAbsBasePath' </> "shelley/utxo-keys/utxo1.skey"
@@ -63,9 +71,12 @@ test = H.integration . HE.runFinallies . workspace "chairman" $ \tempAbsBasePath
   (tx1in, C.TxOut _ v _ _) <- do
     utxo <- findUTxOByAddress localNodeConnectInfo (C.toAddressAny address)
     headM $ Map.toList $ C.unUTxO utxo
+  let lovelaceAtUtxo = C.txOutValueToLovelace v
 
   pparams <- getAlonzoProtocolParams localNodeConnectInfo
-  let txBodyContent = (emptyTxBodyContent 10_000 pparams)
+  let
+    txBodyContent :: C.TxBodyContent C.BuildTx C.AlonzoEra
+    txBodyContent = (emptyTxBodyContent 10_000 pparams)
         { C.txIns = [(tx1in, C.BuildTxWith $ C.KeyWitness C.KeyWitnessForSpending)]
         }
   tx1body :: C.TxBody C.AlonzoEra <- HE.leftFail $ C.makeTransactionBody txBodyContent
@@ -74,7 +85,5 @@ test = H.integration . HE.runFinallies . workspace "chairman" $ \tempAbsBasePath
     kw = C.makeShelleyKeyWitness tx1body (C.WitnessPaymentKey $ C.castSigningKey genesisSKey)
     tx1 = C.makeSignedTransaction [kw] tx1body
   submitTx localNodeConnectInfo tx1
-
-  -- observe indexer
 
   True === True
